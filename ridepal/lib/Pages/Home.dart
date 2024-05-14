@@ -10,15 +10,14 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Column(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          //crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Ridepal',
               style: TextStyle(fontSize: 22),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Icon(
                   Icons.circle_sharp,

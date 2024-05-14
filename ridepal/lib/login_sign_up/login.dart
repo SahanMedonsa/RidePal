@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-
 import 'package:ridepal/Components/Gtext.dart';
 import 'package:ridepal/login_sign_up/signup.dart';
-import 'package:ridepal/navbar/NavigationBar.dart';
-
 import 'package:ridepal/navbar/app_navigation.dart';
 
 class Loginpage extends StatelessWidget {
   const Loginpage({super.key, required navigationShell});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,138 +56,141 @@ class Loginpage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 15, left: 20, right: 20),
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                ElevatedButton(
-                    onPressed: () {},
-                    child: Text('List your own vehicle'),
-                    style: ButtonStyle(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('List your own vehicle'),
+                      style: ButtonStyle(
 
-                        // Customize button appearance
-                        minimumSize: MaterialStateProperty.all(
-                            Size(150, 50)), // Set minimum size of the button
-                        padding: MaterialStateProperty.all(EdgeInsets.all(
-                            16)), // Set padding around the button text
-                        backgroundColor: MaterialStateProperty.all(
-                            Colors.amber), // Set button background color
-                        foregroundColor: MaterialStateProperty.all(
-                            Colors.black), // Set button text color
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.circular(8.0), // Set border radius
-                          ),
-                        ))),
-              ],
-            ),
-            SizedBox(
-              height: 150,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.account_circle_rounded,
-                  size: 100,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            SizedBox(
-              width: 350,
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(
-                        12.0), // Adjust border radius as needed
+                          // Customize button appearance
+                          minimumSize: MaterialStateProperty.all(const Size(
+                              150, 50)), // Set minimum size of the button
+                          padding: MaterialStateProperty.all(EdgeInsets.all(
+                              16)), // Set padding around the button text
+                          backgroundColor: MaterialStateProperty.all(
+                              Colors.amber), // Set button background color
+                          foregroundColor: MaterialStateProperty.all(
+                              Colors.black), // Set button text color
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                  8.0), // Set border radius
+                            ),
+                          ))),
+                ],
+              ),
+              const SizedBox(
+                height: 120,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.account_circle_rounded,
+                    size: 100,
                   ),
-                  labelText: 'User name',
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              SizedBox(
+                width: 350,
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(
+                          12.0), // Adjust border radius as needed
+                    ),
+                    labelText: 'User name',
 
-                  // You can customize other InputDecoration properties here
+                    // You can customize other InputDecoration properties here
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            SizedBox(
-              width: 350,
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(
-                        12.0), // Adjust border radius as needed
-                  ),
-                  labelText: 'Password',
-
-                  // You can customize other InputDecoration properties here
-                ),
-                obscureText: true,
+              const SizedBox(
+                height: 15,
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              Router.withConfig(config: AppNavigation.router)));
-                },
-                child: Text('Login'),
-                style: ButtonStyle(
-                    // Customize button appearance
-                    minimumSize: MaterialStateProperty.all(
-                        Size(150, 50)), // Set minimum size of the button
-                    padding: MaterialStateProperty.all(EdgeInsets.all(
-                        16)), // Set padding around the button text
-                    backgroundColor: MaterialStateProperty.all(
-                        Colors.blue), // Set button background color
-                    foregroundColor: MaterialStateProperty.all(
-                        Colors.white), // Set button text color
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.circular(8.0), // Set border radius
-                      ),
-                    ))),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Gtext(
-                    text: "Don't have an account?",
-                    tsize: 18,
-                    tcolor: Colors.black,
-                    fweight: FontWeight.w400),
-                TextButton(
+              SizedBox(
+                width: 350,
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(
+                          12.0), // Adjust border radius as needed
+                    ),
+                    labelText: 'Password',
+
+                    // You can customize other InputDecoration properties here
+                  ),
+                  obscureText: true,
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Signup()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Router.withConfig(
+                                config: AppNavigation.router)));
                   },
-                  child: Gtext(
-                      text: "Sign Up",
-                      tsize: 19,
-                      tcolor: Colors.blue,
-                      fweight: FontWeight.w600),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-          ],
+                  child: Text('Login'),
+                  style: ButtonStyle(
+                      // Customize button appearance
+                      minimumSize: MaterialStateProperty.all(
+                          Size(150, 50)), // Set minimum size of the button
+                      padding: MaterialStateProperty.all(EdgeInsets.all(
+                          16)), // Set padding around the button text
+                      backgroundColor: MaterialStateProperty.all(
+                          Colors.blue), // Set button background color
+                      foregroundColor: MaterialStateProperty.all(
+                          Colors.white), // Set button text color
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(8.0), // Set border radius
+                        ),
+                      ))),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Gtext(
+                      text: "Don't have an account?",
+                      tsize: 18,
+                      tcolor: Colors.black,
+                      fweight: FontWeight.w400),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Signup()));
+                    },
+                    child: const Gtext(
+                        text: "Sign Up",
+                        tsize: 19,
+                        tcolor: Colors.blue,
+                        fweight: FontWeight.w600),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+            ],
+          ),
         ),
       ),
     );

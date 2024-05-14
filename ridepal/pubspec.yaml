@@ -37,6 +37,7 @@ dependencies:
   go_router: ^13.2.0
   sliding_clipped_nav_bar: ^3.1.1
   font_awesome_flutter: ^10.7.0
+  file_picker: ^8.0.0+1
 
 dev_dependencies:
   flutter_test:
