@@ -1,7 +1,5 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:ridepal/Components/Gtext.dart';
 
 class Signup extends StatefulWidget {
@@ -78,11 +76,11 @@ class _SignupState extends State<Signup> {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.only(top: 45, left: 15, right: 15),
+        padding: EdgeInsets.only(top: 70, left: 15, right: 15),
         child: ListView(
           children: [
             const Gtext(
-                text: 'Login For Vehicle Owner',
+                text: 'Sign up',
                 tsize: 23,
                 tcolor: Colors.black,
                 fweight: FontWeight.w600),
@@ -104,81 +102,13 @@ class _SignupState extends State<Signup> {
             ),
             SizedBox(height: 16.0),
             _buildTextField(
-              labelText: 'NIC Number',
-            ),
-            SizedBox(height: 16.0),
-            Row(
-              children: [
-                Expanded(
-                  flex: 3,
-                  child: DropdownButtonFormField<String>(
-                    value: _selectedVehicleType,
-                    onChanged: (newValue) {
-                      setState(() {
-                        _selectedVehicleType = newValue!;
-                      });
-                    },
-                    items: ['Car', 'Van', 'Tuktuk', 'Scooter']
-                        .map<DropdownMenuItem<String>>(
-                          (value) => DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          ),
-                        )
-                        .toList(),
-                    decoration: InputDecoration(
-                      labelText: 'Vehicle Type',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(width: 16.0),
-                Expanded(
-                  flex: 2,
-                  child: _buildTextField(
-                    labelText: 'Price per Day',
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 16.0),
-            SizedBox(
-              width: double.infinity,
-              height: 120,
-              child: Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    border: Border.all(color: Colors.grey)),
-                child: Center(
-                    child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.add_a_photo_rounded,
-                      color: Colors.grey,
-                    ),
-                    const Gtext(
-                        text: 'Add your vehicle photos',
-                        tsize: 18,
-                        tcolor: Colors.grey,
-                        fweight: FontWeight.w400),
-                  ],
-                )),
-              ),
+              labelText: 'Email',
             ),
             SizedBox(height: 16.0),
             _buildTextField(
-              labelText: 'Description',
+              labelText: 'Password',
             ),
             SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () {
-                // Implement upload document functionality
-              },
-              child: Text('Upload Vehicle Document'),
-            ),
             SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {

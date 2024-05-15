@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ridepal/Components/Gtext.dart';
+import 'package:ridepal/vehicle/Threewheel.dart';
+import 'package:ridepal/vehicle/car.dart';
+import 'package:ridepal/vehicle/van.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -76,38 +79,50 @@ class Home extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      width: 180,
-                      height: 120,
-                      decoration: BoxDecoration(
-                          color: Colors.purple.withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(15)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          FaIcon(
-                            FontAwesomeIcons.car,
-                            size: 90,
-                            color: Colors.purple.shade400,
-                          ),
-                        ],
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => CarPage()));
+                      },
+                      child: Container(
+                        width: 150,
+                        height: 120,
+                        decoration: BoxDecoration(
+                            color: Colors.purple.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(15)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FaIcon(
+                              FontAwesomeIcons.car,
+                              size: 90,
+                              color: Colors.purple.shade400,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    Container(
-                      width: 180,
-                      height: 120,
-                      decoration: BoxDecoration(
-                          color: Colors.amber.withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(15)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          FaIcon(
-                            FontAwesomeIcons.vanShuttle,
-                            size: 90,
-                            color: Colors.amber.shade400,
-                          ),
-                        ],
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => VanPage()));
+                      },
+                      child: Container(
+                        width: 150,
+                        height: 120,
+                        decoration: BoxDecoration(
+                            color: Colors.amber.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(15)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FaIcon(
+                              FontAwesomeIcons.vanShuttle,
+                              size: 90,
+                              color: Colors.amber.shade400,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],
@@ -118,42 +133,54 @@ class Home extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      width: 180,
-                      height: 120,
-                      decoration: BoxDecoration(
-                          color: Colors.green.withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(15)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          FaIcon(
-                            FontAwesomeIcons.motorcycle,
-                            size: 90,
-                            color: Colors.green.shade400,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                        width: 180,
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => CarPage()));
+                      },
+                      child: Container(
+                        width: 150,
                         height: 120,
                         decoration: BoxDecoration(
-                            color: Colors.red.withOpacity(0.2),
+                            color: Colors.green.withOpacity(0.2),
                             borderRadius: BorderRadius.circular(15)),
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/tuktuk.png'),
-                              fit: BoxFit
-                                  .contain, // Adjust the image fit as needed
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FaIcon(
+                              FontAwesomeIcons.motorcycle,
+                              size: 90,
+                              color: Colors.green.shade400,
                             ),
-                            borderRadius: BorderRadius.circular(
-                                12), // Apply border radius
-                          ),
-                        )),
+                          ],
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => tuktuk()));
+                      },
+                      child: Container(
+                          width: 150,
+                          height: 120,
+                          decoration: BoxDecoration(
+                              color: Colors.red.withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(15)),
+                          child: Container(
+                            width: 40,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/tuktuk.png'),
+                                fit: BoxFit
+                                    .contain, // Adjust the image fit as needed
+                              ),
+                              borderRadius: BorderRadius.circular(
+                                  12), // Apply border radius
+                            ),
+                          )),
+                    ),
                   ],
                 ),
               ),

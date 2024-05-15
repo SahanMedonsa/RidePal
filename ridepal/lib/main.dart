@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       theme: ThemeData(
+        listTileTheme: ListTileThemeData(tileColor: Colors.grey.shade200),
         appBarTheme: const AppBarTheme(
           titleTextStyle: TextStyle(
             color: Colors.black,

@@ -16,16 +16,16 @@ class newscontainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 5),
+      padding: const EdgeInsets.only(bottom: 5, right: 5, left: 5),
       child: Container(
-        width: double.infinity,
+        width: MediaQuery.of(context).size.width,
         height: 120,
         // color: Colors.amber,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              width: 80,
+              width: 70,
               height: 80,
               decoration: BoxDecoration(
                 border: Border.all(),
@@ -42,7 +42,7 @@ class newscontainer extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: 12,
+              width: 5,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
