@@ -26,6 +26,7 @@ class _listownvehiState extends State<listownvehi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         // automaticallyImplyLeading: false,
         title: const Column(
@@ -78,7 +79,7 @@ class _listownvehiState extends State<listownvehi> {
         child: ListView(
           children: [
             const Gtext(
-                text: 'Login For Vehicle Owner',
+                text: 'Registration for Vehicle Owner',
                 tsize: 23,
                 tcolor: Colors.black,
                 fweight: FontWeight.w600),
@@ -170,17 +171,29 @@ class _listownvehiState extends State<listownvehi> {
             ),
             SizedBox(height: 16.0),
             ElevatedButton(
-              onPressed: () {
-                // Implement upload document functionality
-              },
-              child: Text('Upload Vehicle Document'),
-            ),
-            SizedBox(height: 16.0),
-            ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+              ),
               onPressed: () {
                 // Implement form submission
               },
-              child: Text('Submit'),
+              child: Text(
+                'Upload Vehicle Document',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            SizedBox(height: 16.0),
+            ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+              ),
+              onPressed: () {
+                // Implement form submission
+              },
+              child: Text(
+                'Submit',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ],
         ),

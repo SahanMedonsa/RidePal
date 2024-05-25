@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ridepal/Components/Gtext.dart';
 import 'package:ridepal/vehicle/Threewheel.dart';
 import 'package:ridepal/vehicle/car.dart';
+import 'package:ridepal/vehicle/scooter.dart';
 import 'package:ridepal/vehicle/van.dart';
 
 class Home extends StatelessWidget {
@@ -136,7 +137,7 @@ class Home extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => CarPage()));
+                            MaterialPageRoute(builder: (context) => Scooter()));
                       },
                       child: Container(
                         width: 150,

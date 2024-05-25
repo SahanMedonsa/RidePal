@@ -125,7 +125,14 @@ class _vehiclerentState extends State<vehiclerent> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    ElevatedButton(onPressed: () {}, child: Text('Book now')),
+                    ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.blue),
+                        ),
+                        onPressed: () {},
+                        child: Text('Book now',
+                            style: TextStyle(color: Colors.white))),
                   ],
                 )
               ],

@@ -13,6 +13,7 @@ String _selectedVehicleType = 'Car'; // Default vehicle type
 
 Widget _buildTextField({
   required String labelText,
+  bool? obscureText,
 }) {
   return TextField(
     decoration: InputDecoration(
@@ -28,6 +29,7 @@ class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         // automaticallyImplyLeading: false,
         title: const Column(
@@ -105,16 +107,20 @@ class _SignupState extends State<Signup> {
               labelText: 'Email',
             ),
             SizedBox(height: 16.0),
-            _buildTextField(
-              labelText: 'Password',
-            ),
+            _buildTextField(labelText: 'Password', obscureText: true),
             SizedBox(height: 16.0),
             SizedBox(height: 16.0),
             ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+              ),
               onPressed: () {
                 // Implement form submission
               },
-              child: Text('Submit'),
+              child: Text(
+                'Sign Up',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ],
         ),

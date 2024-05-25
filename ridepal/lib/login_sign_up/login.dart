@@ -9,6 +9,7 @@ class Loginpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Column(
           //mainAxisAlignment: MainAxisAlignment.center,
@@ -90,7 +91,8 @@ class Loginpage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(
                                   8.0), // Set border radius
                             ),
-                          ))),
+                          ))
+                          ),
                 ],
               ),
               const SizedBox(
